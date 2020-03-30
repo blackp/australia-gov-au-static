@@ -8,7 +8,8 @@
     "@11ty/eleventy": "^0.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm @11ty/eleventy",
+    "watch": "npm @11ty/eleventy --serve"
   },
   "repository": {
     "type": "git",

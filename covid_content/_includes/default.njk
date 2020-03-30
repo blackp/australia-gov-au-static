@@ -124,9 +124,9 @@
 				</div>
 			</div>
 
-    {% set cls = cycler("l-container", "l-container bg-grey") %}
+    {% set containerClass = cycler("l-container", "l-container bg-grey") %}
     {% for carouselCollection in carousels %}
-      <div class="{{cls.next()}}" id="key-updates-carousel">
+      <div class="{{containerClass.next()}}" id="key-updates-carousel">
         <div class="l-padding centre-align">
 					<h2>{{carouselCollection.title}}</h2>
 				</div>

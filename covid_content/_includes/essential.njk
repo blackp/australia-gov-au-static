@@ -1,0 +1,16 @@
+<div class="l-container bg-grey">
+  <div class="l-padding centre-align">
+    <div class="styled-list">
+      <h2>Essential information</h2>
+      <p>Updated: 7:30pm AEDTss on Sunday, 29 March 2020</p>
+      <ul>
+      {% for item in essent %}
+        {% for li in item.data.list %}
+          <li>{{ li | safe}}</li>
+        {% endfor %}
+      {% endfor %}
+
+      </ul>
+    </div>
+  </div>
+</div>

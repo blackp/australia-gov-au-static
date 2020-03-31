@@ -110,53 +110,7 @@
       </div>
 			</div>
 
-			<div class="l-container bg-grey">
-				<div class="l-padding centre-align">
-					<div class="styled-list">
-						<h2>Essential information</h2>
-            <p>Updated: 7:30pm AEDT on Sunday, 29 March 2020</p>
-						<ul>
-              {% for item in essential_list %}
-                <li>{{ item | safe }}</li>
-              {% endfor %}
-						</ul>
-					</div>
-				</div>
-			</div>
-
-    {% set containerClass = cycler("l-container", "l-container bg-grey") %}
-    {% for carouselCollection in carousels %}
-      <div class="{{containerClass.next()}}" id="key-updates-carousel">
-        <div class="l-padding centre-align">
-					<h2>{{carouselCollection.title}}</h2>
-				</div>
-
-        {% set carouselData %}
-          { "slides" : [
-            {% for card in carouselCollection.cards %}
-              {
-                "title": "{{card.title}}",
-                "description": "{{card.description}}",
-                {% if card.imgUrl%}
-                  "imgUrl": "homepage-resources/resources/{{card.imgUrl}}",
-                {% endif %}
-                "linkUrl": "{{card.linkUrl}}"
-              }
-              {% if loop.index  !=  loop.length %}
-                ,
-              {% endif %}
-            {% endfor %}
-            ]}
-          {% endset %}
-
-          <div
-            data-component="{{carouselCollection.data_component}}"
-            data-props='{{carouselData}}'>
-          </div>
-
-        </div>
-    {% endfor %}
-
+      {{ content | safe }}
 
 
 		</main>

@@ -1,0 +1,32 @@
+ {% set containerClass = cycler("l-container", "l-container bg-grey") %}
+    {% for carouselCollection in carousels %}
+      <div class="{{containerClass.next()}}" id="{{carouselCollection.data.id}}">
+        <div class="l-padding centre-align">
+					<h2>{{carouselCollection.data.title}}</h2>
+				</div>
+
+        {% set carouselData %}
+          { "slides" : [
+            {% for card in carouselCollection.data.cards %}
+              {
+                "title": "{{card.title}}",
+                "description": "{{card.description}}",
+                {% if card.imgUrl%}
+                  "imgUrl": "homepage-resources/resources/{{card.imgUrl}}",
+                {% endif %}
+                "linkUrl": "{{card.linkUrl}}"
+              }
+              {% if loop.index  !=  loop.length %}
+                ,
+              {% endif %}
+            {% endfor %}
+            ]}
+          {% endset %}
+
+          <div
+            data-component="{{carouselCollection.data.data_component}}"
+            data-props='{{carouselData}}'>
+          </div>
+
+        </div>
+    {% endfor %}

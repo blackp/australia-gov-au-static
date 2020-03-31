@@ -1,7 +1,7 @@
 ---
 id: financial-support-carousel
 data_component: rc-most-viewed-carousel
-title: Supporting the community
+title: Receiving financial support
 cards:
   - title: If you need a Centrelink payment
     description: Register your claim for a Centrelink payment online.
